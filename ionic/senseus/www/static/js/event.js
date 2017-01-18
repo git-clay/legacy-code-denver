@@ -1,3 +1,4 @@
+
 var reviewDivHTML = "\
     <span id='outer-reviews'>{0}</span>\
     <div class='row'><span id='outer-stars' class='stars'><span id='inner-stars' style='width:{1}px;'></span></span><span id='outer-author'>{2}</span></div>\
@@ -5,28 +6,28 @@ var reviewDivHTML = "\
 
 var locationRating = "<span id='outer-stars' class='stars'><span id='inner-stars' style='width:{0}px;'></span></span><span id='outer-rating'>{1}</span><span id='outer-users'>{2}</span>";
 
-function setRating(span_name, rating, user_ratings, reviews) {
-        if (rating && reviews) {
+// function setRating(span_name, rating, user_ratings, reviews) {
+//         if (rating && reviews) {
 
-        var rat = Math.round(16*rating);
-		document.getElementById('location-ratings-div').innerHTML = locationRating.replace("{0}",rat).replace("{1}", rating).replace("{2}",user_ratings);
-       document.getElementById("outer-rating").innerHTML = rating;
-       document.getElementById("outer-users").innerHTML = "("+user_ratings+" Ratings)";
-       var review = reviews[0].text;
-       for(var i=0;i<Math.max(reviews.length);i++) {
-           var rat = Math.round(16*parseFloat(reviews[i].rating));
-           var author = ' - '+ reviews[i].author_name;
-           if(reviews[i].text.length > 900) {
-               reviewText = reviews[i].text.substring(0,900) + " ...";
-           } else {
-               reviewText = reviews[i].text;
-           }
-           var reviewText;
-           document.getElementById("review"+i).innerHTML = reviewDivHTML.replace("{0}",reviewText).replace("{1}", rat).replace("{2}", author);
-       }
+//         var rat = Math.round(16*rating);
+// 		document.getElementById('location-ratings-div').innerHTML = locationRating.replace("{0}",rat).replace("{1}", rating).replace("{2}",user_ratings);
+//        document.getElementById("outer-rating").innerHTML = rating;
+//        document.getElementById("outer-users").innerHTML = "("+user_ratings+" Ratings)";
+//        var review = reviews[0].text;
+//        for(var i=0;i<Math.max(reviews.length);i++) {
+//            var rat = Math.round(16*parseFloat(reviews[i].rating));
+//            var author = ' - '+ reviews[i].author_name;
+//            if(reviews[i].text.length > 900) {
+//                reviewText = reviews[i].text.substring(0,900) + " ...";
+//            } else {
+//                reviewText = reviews[i].text;
+//            }
+//            var reviewText;
+//            document.getElementById("review"+i).innerHTML = reviewDivHTML.replace("{0}",reviewText).replace("{1}", rat).replace("{2}", author);
+//        }
 
-    }
-}
+//     }
+// }
 
 function extractLocationInfo(place){
     var location = {};
@@ -34,7 +35,7 @@ function extractLocationInfo(place){
     location['geometry'] = {'A': place['geometry']['location']['A'], 'F': place['geometry']['location']['F']}
     location['place_id'] = place['place_id'];
     location['rating'] = place['rating'];
-    location['reviews'] = place['reviews'];
+    // location['reviews'] = place['reviews'];
     location['user_ratings_total'] = place['user_ratings_total'];
     var rating = parseFloat(place['rating']);
     setRating('outer-stars', rating, place['user_ratings_total'], location['reviews']);
