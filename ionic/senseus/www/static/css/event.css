@@ -208,6 +208,9 @@ border-color: red;
   font-weight: bold;
   width: 100%;
 }
+.item{
+  min-height: 40px;
+}
 
 .event-next-button {
   width: 50%;
@@ -264,7 +267,8 @@ border-color: red;
 
 #event-name-container .bar-footer #progress-bar-container {
   height: 50%;
-  width: 100%; }
+  width: 100%; 
+}
 
 #event-name-container .bar-footer #next-button-div {
   height: 50%;
@@ -284,10 +288,7 @@ border-color: red;
   display: flex;
   padding-left: 1%; }
 
-.flex-display-center {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+
 
 .toggle input + .track {
   background-color: red;
@@ -311,11 +312,11 @@ border-color: red;
 }
 
 #event-name-container span, #event-name-container div , #event-name-container label {
-  font-size: 10px;
+  font-size: 18px;
 }
 
 #event-name-container #senseus-header span{
-  font-size: 14px;
+  font-size: 26px;
 }
 
 .flex-row, .p0 {
