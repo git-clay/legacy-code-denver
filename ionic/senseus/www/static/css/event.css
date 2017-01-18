@@ -72,10 +72,11 @@
 }
 
 #next-button-div .next-button {
-    margin-right: 10%;
-    margin-left: 2.5%;
+    margin:0 auto;
 }
+.button{
 
+}
 #next-button-div .back-buttony {
     margin-left: 12%;
     margin-right: 2.5%;
@@ -156,9 +157,10 @@ border-color: red;
 #event-area {
     display: flex;
     flex-direction: column;
-    width: 99%;
+    width: 75%;
     height: 96%;
     padding-left: 1%;
+    margin:0 auto;
 }
 
 #inner-location-wrapper, #inner-calendar-wrapper {
@@ -188,6 +190,15 @@ border-color: red;
 	min-height: 100%;
   justify-content: center;
 }
+.event-col80 {
+  display: flex;
+  width: 75%;
+  flex-shrink: 0;
+  flex-grow: 10;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: center;
+}
 .col10 {
   display: flex;
   width: 15%;
@@ -209,11 +220,12 @@ border-color: red;
   width: 100%;
 }
 .item{
-  min-height: 40px;
+  min-height: 50px;
 }
 
 .event-next-button {
   width: 50%;
+
 }
 
 .event-column {
@@ -272,7 +284,8 @@ border-color: red;
 
 #event-name-container .bar-footer #next-button-div {
   height: 50%;
-  width: 100%; }
+  width: 100%; 
+  }
 
 .slider {
   height: 100%; }
@@ -287,8 +300,13 @@ border-color: red;
 .col-90 {
   display: flex;
   padding-left: 1%; }
-
-
+a.button{
+  height: 30px;
+}
+.flex-display-center {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 .toggle input + .track {
   background-color: red;
